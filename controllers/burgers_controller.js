@@ -7,7 +7,7 @@ router.get('/', function(req, res){
         var hbsObject = {
             burgers: data
         }
-        res.render("index", bbqOb)
+        res.render("index", hbsObject)
     })
 })
 router.post("/api/burgers", function(req, res){

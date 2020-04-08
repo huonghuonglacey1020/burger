@@ -1,6 +1,5 @@
 const connection = require('./connection');
 
-const orm = {};
 function printQuestionMarks(num) {
     var arr = [];
     for (var i = 0; i < num; i++) {

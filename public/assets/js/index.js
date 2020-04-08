@@ -2,10 +2,10 @@
 $(function() {
     $(".devour-burg").on("click", function(event) {
       var id = $(this).data("id");
-      var newSleep = $(this).data("devoured");
+      var newDevoured = $(this).data("devoured");
   
-      var newSleepState = {
-        sleepy: newSleep
+      var newDevouredState = {
+        devoured: true
       };
   
       // Send the PUT request.
@@ -43,15 +43,15 @@ $(function() {
       );
     });
   
-    $(".delete-cat").on("click", function(event) {
+    $(".delete-burgers").on("click", function(event) {
       var id = $(this).data("id");
   
       // Send the DELETE request.
-      $.ajax("/api/cats/" + id, {
+      $.ajax("/api/burgers/" + id, {
         type: "DELETE"
       }).then(
         function() {
-          console.log("deleted cat", id);
+          console.log("deleted burgers", id);
           // Reload the page to get the updated list
           location.reload();
         }
