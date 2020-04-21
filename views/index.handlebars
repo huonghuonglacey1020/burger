@@ -1,10 +1,12 @@
-<h1>Burgers</h1>
+<h1 style="text-align: center;">Burgers</h1>
 
-<div class="image">
+  
+<div >
+  <img src="/assets/css/burger.png">
   {{!-- <iframe src="https://giphy.com/embed/2UEYglT8nT69q7YGG7" width="480" height="341" frameBorder="0" class="giphy-embed"
     allowFullScreen></iframe> --}}
   {{!-- <p><a href="https://giphy.com/gifs/WGBH-burgers-wgbh-food-2UEYglT8nT69q7YGG7">via GIPHY</a></p> --}}
-</div>
+
 
 <div class="burger-form">
   <h2>Add burger</h2>
@@ -46,9 +48,9 @@
         {{#unless this.devoured}}
         <div class="col-md-9 burgers">{{this.burgers_name}}</div>
         <div class="col-md-3">
-          <form>
+          <form class="devoured">
             <input type="hidden" class="burgers_id" type="text" value={{this.id}}>
-            <button type="submit" class="devoured">Devour a burger</button>
+            <button type="submit" >Devour a burger</button>
 
             <br />
           </form>

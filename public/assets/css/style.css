@@ -1,0 +1,60 @@
+.label {
+    font-weight: bold;
+  }
+  
+  .create-form {
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 5px;
+  }
+  
+  img {
+    width: 98px;
+    height: 98px;
+    padding: 5px;
+    margin: 5px;
+  }
+
+  li {
+    list-style-position: inside;
+    background: #d6bab1;
+    padding: 5px;
+    margin: 5px;
+  }
+
+  #ca{
+    padding: 5px;
+    margin: 5px;
+  }
+
+  body {
+    background: #d6bab1;
+    text-align: center;
+  }
+
+  h2 {
+    padding: 5px;
+    margin: 5px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .col-md-6 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

@@ -23,8 +23,8 @@ router.post("/api/burgers", function(req, res){
 router.put("/burgers/:id", function(req, res){
    
     
-    burgers.update(req.params.id, function(res){
-        console.log(res);
+    burgers.update(req.params.id, function(result){
+        console.log(result);
         res.sendStatus(200);
         
     
