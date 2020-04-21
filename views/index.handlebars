@@ -1,34 +1,75 @@
 <h1>Burgers</h1>
 
-<h2>Burger not eaten</h2>
+<div class="image">
+  {{!-- <iframe src="https://giphy.com/embed/2UEYglT8nT69q7YGG7" width="480" height="341" frameBorder="0" class="giphy-embed"
+    allowFullScreen></iframe> --}}
+  {{!-- <p><a href="https://giphy.com/gifs/WGBH-burgers-wgbh-food-2UEYglT8nT69q7YGG7">via GIPHY</a></p> --}}
+</div>
 
-<ul>
-  {{#each burgers}}
-  {{#unless this.devoured }}
-  {{!> burgers/burgers-block devoured=true}}
-  <li>
-    <pre >{{this.id}}. {{this.burgers_name}} </pre>
-  </li>
-  {{/unless}}
-  {{/each}}
-</ul>
+<div class="burger-form">
+  <h2>Add burger</h2>
+  <form action="/api/burgers" class="form" method="POST">
 
-<h2>burger eaten</h2>
-
-<ul>
-  {{!#each burgers}}
-  {{!#if devoured}}
-  {{!> burgers/burger-block devoured=false}}
-  {{!/if}}
-  {{!/each}}
-</ul>
+    <label for="ca">Burger name:</label>
+    <input type="text" id="ca" name="name">
 
 
-<form action="/api/burgers" method="POST"class="create-form">
-<input type="text" name="burgers_name">
+    <button type="submit">Add burger</button>
 
+  </form>
+  {{!-- <h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <button type="submit">Add Cat</button>
+</form>
+ --}}
+
+</div>
+<div class="box-form">
+  <div class="col1">
+    <div class="col2">
+
+    </div>
+  </div>
 
   
+  
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Burger have not been eaten</h2>
+        {{#each burgers}}
+        {{#unless this.devoured}}
+        <div class="col-md-9 burgers">{{this.burgers_name}}</div>
+        <div class="col-md-3">
+          <form>
+            <input type="hidden" class="burgers_id" type="text" value={{this.id}}>
+            <button type="submit" class="devoured">Devour a burger</button>
 
-  <button type="submit">Add burgers</button>
-</form>
+            <br />
+          </form>
+        </div>
+        {{/unless}}
+        {{/each}}
+
+      </div>
+      <div class="col-md-6">
+        <h2>Burgers Eaten</h2>
+        {{#each burgers}}
+        {{#if this.devoured}}
+        <input type="text" class="form-control" placeholder="{{this.burgers_name}}" readonly>
+        {{/if}}
+        {{/each}}
+      </div>
+      <!--Below will loop through burgers array and display them to the page -->
+    </div> 
+</div>
+</div>
+
+</div>
+
+</div>

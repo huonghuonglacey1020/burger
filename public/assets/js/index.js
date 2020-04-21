@@ -1,6 +1,21 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function() {
-    $(".devour-burg").on("click", function(event) {
+$(document).ready(function(){
+  $('.devoured').on("submit", function(event){
+    event.preventDefault();
+    console.log('working');
+    $.ajax ({
+      method: 'PUT',
+      url: '/burgers/'+ $(this).children('.burgers_id').val()
+      })
+    .then(function(data){
+      location.reload();
+    })
+  })
+
+
+
+    /*$("#burger").on("click", function(event) {
+      console.log('working')
       var id = $(this).data("id");
       var newDevoured = $(this).data("devoured");
   
@@ -20,42 +35,20 @@ $(function() {
         }
       );
     });
-  
-    $(".create-form").on("submit", function(event) {
-      // Make sure to preventDefault on a submit event.
-      event.preventDefault();
-  
-      var newBurgers = {
-        burgers_name: $("#ca").val().trim()
-      };
-      console.log(newBurgers)
-  
-      // Send the POST request.
-      $.ajax("/api/burgers", {
-        type: "POST",
-        data: newBurgers
-      }).then(
-        function() {
-          console.log("created new burgers");
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
+  })*/
+  //$(".burger").on("click", function(event) {
+    //var id = $(this).data("id");
+    //console.log(id);
+
+    // Send the DELETE request.
+    /*$.ajax("/api/cats/" + id, {
+      type: "DELETE"
+    }).then(
+      function() {
+        console.log("deleted cat", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );*/
+   
     });
-  
-    $(".delete-burgers").on("click", function(event) {
-      var id = $(this).data("id");
-  
-      // Send the DELETE request.
-      $.ajax("/api/burgers/" + id, {
-        type: "DELETE"
-      }).then(
-        function() {
-          console.log("deleted burgers", id);
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    });
-  });
-  

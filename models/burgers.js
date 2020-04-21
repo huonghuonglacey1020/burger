@@ -13,10 +13,11 @@ var burgers = {
     orm.create("burgers", ['burgers_name','devoured'], [name, false], cb);
     },
   
-  update: function(objColVals, condition, cb) {
-    orm.update("burgers", objColVals, condition, function(res) {
-      cb(res);
-    });
+  update: function(id, cb) {
+    var burgerId = "id ="+ id;
+    orm.update("burgers",{devoured: true},burgerId,cb) 
+     
+    
   },
   delete: function(condition, cb) {
     orm.delete("burgers", condition, function(res) {
